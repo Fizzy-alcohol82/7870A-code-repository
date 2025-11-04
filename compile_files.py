@@ -73,7 +73,7 @@ def main():
          #   lines.append(f'#include "{path}"')
         
         lines += [
-            "std::map<std::string, EMBEDDED_FILE_STRUCT> FILE_MAPPING = {"
+            "std::unordered_map<std::string, EMBEDDED_FILE_STRUCT> FILE_MAPPING = {"
         ]
         for path,c_def in cpp_mapping.items():
             lines.append(f'\t{{"{path.replace("\\", "/")}", {c_def}_DATA}},')
